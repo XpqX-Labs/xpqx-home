@@ -9,11 +9,13 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-black">
-      <Suspense fallback={
-        <div className="flex items-center justify-center min-h-screen bg-black text-white font-mono">
-          <div className="text-white">Loading terminal...</div>
-        </div>
-      }>
+      <Suspense
+        fallback={
+          <div className="flex items-center justify-center min-h-screen bg-black text-white font-mono">
+            <div className="text-white">Loading terminal...</div>
+          </div>
+        }
+      >
         <FetchIp onFetch={setIpAddress} />
         <TerminalSystem ipAddress={ipAddress} />
       </Suspense>
