@@ -27,7 +27,7 @@ export default function Terminal({ ipAddress }: TerminalProps) {
     if (inputRef.current) {
       inputRef.current.focus();
     }
-    
+
     if (terminalRef.current) {
       terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
     }
@@ -43,7 +43,7 @@ export default function Terminal({ ipAddress }: TerminalProps) {
     inputRef,
     executeCommand,
     navigateHistory,
-    state.currentInput
+    state.currentInput,
   );
 
   const getPrompt = () => {
@@ -51,9 +51,9 @@ export default function Terminal({ ipAddress }: TerminalProps) {
     return `${state.username}@${hostname}:~#`;
   };
 
-  const renderLine = (line: typeof state.history[0]) => {
+  const renderLine = (line: (typeof state.history)[0]) => {
     let className = 'mb-1';
-    
+
     switch (line.type) {
       case 'command':
         className += ' text-white font-bold';
@@ -80,15 +80,17 @@ export default function Terminal({ ipAddress }: TerminalProps) {
       // regex patterns for different types of links
       const urlPattern = /(https?:\/\/[^\s]+)/g;
       const emailPattern = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
-      
+
       // check if content contains URLs or emails
       if (urlPattern.test(content) || emailPattern.test(content)) {
-        const parts = content.split(/(https?:\/\/[^\s]+|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g);
-        
+        const parts = content.split(
+          /(https?:\/\/[^\s]+|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g,
+        );
+
         return parts.map((part, index) => {
           if (urlPattern.test(part)) {
             return (
-              <a 
+              <a
                 key={index}
                 href={part}
                 target="_blank"
@@ -100,7 +102,7 @@ export default function Terminal({ ipAddress }: TerminalProps) {
             );
           } else if (emailPattern.test(part)) {
             return (
-              <a 
+              <a
                 key={index}
                 href={`mailto:${part}`}
                 className="text-blue-400 hover:text-blue-300 underline cursor-pointer"
@@ -112,7 +114,7 @@ export default function Terminal({ ipAddress }: TerminalProps) {
           return part;
         });
       }
-      
+
       return content;
     };
 
@@ -124,7 +126,7 @@ export default function Terminal({ ipAddress }: TerminalProps) {
   };
 
   return (
-    <div 
+    <div
       ref={terminalRef}
       className="w-full h-screen bg-black text-white font-mono p-4 sm:p-6 overflow-y-auto cursor-text select-none terminal-strict scrollbar-thin"
       onClick={eventHandlers.handleTerminalClick}
@@ -136,11 +138,9 @@ export default function Terminal({ ipAddress }: TerminalProps) {
     >
       <div className="max-w-full whitespace-pre-wrap break-words text-[3.2vw] sm:text-[2.2vw] md:text-sm lg:text-base transition-all duration-300 ease-in-out">
         {state.history.map(renderLine)}
-        
+
         <div className="flex items-center mb-1">
-          <span className="text-white font-bold mr-2">
-            {getPrompt()}
-          </span>
+          <span className="text-white font-bold mr-2">{getPrompt()}</span>
           <div className="flex-1 relative">
             <input
               ref={inputRef}
@@ -160,19 +160,13 @@ export default function Terminal({ ipAddress }: TerminalProps) {
               autoCapitalize="off"
             />
             {state.isLoading && (
-              <span className="absolute right-0 top-0 animate-pulse text-yellow-400">
-                ...
-              </span>
+              <span className="absolute right-0 top-0 animate-pulse text-yellow-400">...</span>
             )}
           </div>
         </div>
       </div>
-      
-      {state.isLoading && (
-        <div className="text-yellow-400 text-sm mt-2">
-          Processing command...
-        </div>
-      )}
+
+      {state.isLoading && <div className="text-yellow-400 text-sm mt-2">Processing command...</div>}
     </div>
   );
 }
