@@ -13,18 +13,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hello World! - Ilham Alfath",
+  title: "My Terminal",
   description:
-    "Hi, I'm Ilham Alfath. This domain is dedicated to my assignments and final projects. Welcome to my personal space on the web!",
+    "Personal website of Ilham Alfath. Web developer passionate about modern technologies. Built with Next.js & TypeScript.",
   authors: [{ name: "Ilham Alfath", url: "https://xpqx.xyz" }],
+  keywords: ["Ilham Alfath", "web developer", "portfolio", "xpqx", "developer"],
   openGraph: {
-    title: "Hello World! - Ilham Alfath",
+    title: "My Terminal",
     description:
-      "Hi, I'm Ilham Alfath. This domain is dedicated to my assignments and final projects. Welcome to my personal space on the web!",
+      "Personal website of Ilham Alfath. Web developer passionate about modern technologies.",
     url: "https://xpqx.xyz",
-    siteName: "Ilham Alfath's Website",
+    siteName: "XPQX.XYZ",
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "My Terminal",
+    description: "Personal website of Ilham Alfath. Web developer passionate about modern technologies.",
   },
 };
 
