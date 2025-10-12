@@ -70,7 +70,7 @@ export default function Terminal({ ipAddress }: TerminalProps) {
     if (line.content === '__BANNER_IMAGE__') {
       return (
         <div key={line.id} className="mb-1">
-          <AsciiBanner showCredit={false} />
+          <AsciiBanner />
         </div>
       );
     }
