@@ -170,8 +170,7 @@ const commands: Record<string, Command> = {
       output: [
         'Contact Information:',
         '',
-        '📧 Email: ilham28alfath@gmail.com',
-        '🌐 Website: https://xpqx.xyz',
+        '📧 Email: ilham@xpqx.xyz',
         '💼 LinkedIn: https://id.linkedin.com/in/ilham-alfath-537776a7',
         '🐙 GitHub: https://github.com/ujangdoubleday',
         '',
