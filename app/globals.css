@@ -1,140 +1,91 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* win98 colors as tailwind tokens */
+  --color-win98-desktop: #008080;
+  --color-win98-silver: #c0c0c0;
+  --color-win98-dark: #808080;
+  --color-win98-light: #dfdfdf;
+  --color-win98-title: #000080;
+  --color-win98-title-inactive: #808080;
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
-.terminal-strict {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.terminal-strict * {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+body {
+  font-family:
+    'MS Sans Serif', 'Microsoft Sans Serif', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  background-color: var(--color-win98-desktop);
+  cursor: default;
   user-select: none;
 }
 
-.terminal-strict {
-  pointer-events: auto;
-}
-
-.terminal-strict *:not(input):not(a) {
-  pointer-events: none;
-}
-
-.terminal-strict input {
-  pointer-events: auto;
-}
-
-.terminal-strict a {
-  pointer-events: auto;
-}
-
-.animate-blink {
-  display: inline-block;
-  width: 10px;
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-@keyframes slide-in {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
+@media (min-width: 768px) {
+  body {
+    font-size: 13px;
   }
 }
 
-.animate-slide-in {
-  animation: slide-in 1.5s ease-out;
+/* win98 3d border utilities */
+.win98-outset {
+  border: 2px solid;
+  border-color: #fff #000 #000 #fff;
+  box-shadow:
+    inset -1px -1px 0 #808080,
+    inset 1px 1px 0 #dfdfdf;
 }
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
+.win98-inset {
+  border: 2px solid;
+  border-color: #808080 #fff #fff #808080;
+  box-shadow: inset 1px 1px 0 #000;
+}
+
+/* title bar gradient */
+.win98-titlebar-active {
+  background: linear-gradient(90deg, #000080, #1084d0);
+}
+
+.win98-titlebar-inactive {
+  background: linear-gradient(90deg, #808080, #b5b5b5);
+}
+
+/* scrollbar styling */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: repeating-linear-gradient(45deg, #c0c0c0, #c0c0c0 2px, #dfdfdf 2px, #dfdfdf 4px);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0;
+  border: 2px solid;
+  border-color: #fff #000 #000 #fff;
+}
+
+/* mobile: make windows full screen */
+@media (max-width: 767px) {
+  .win98-window-mobile {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: calc(100% - 48px) !important;
   }
-  100% {
-    opacity: 1;
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 2s ease-in-out;
-}
-
-.scrollbar-thin {
-  scrollbar-width: thin;
-  scrollbar-color: #16a34a #111827;
-}
-
-.scrollbar-thin::-webkit-scrollbar {
-  width: 6px;
-}
-
-.scrollbar-thin::-webkit-scrollbar-track {
-  background: #111827;
-  border-radius: 3px;
-}
-
-.scrollbar-thin::-webkit-scrollbar-thumb {
-  background: #16a34a;
-  border-radius: 3px;
-  border: 1px solid #111827;
-}
-
-.scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background: #22c55e;
-}
-
-.boot-scrollbar::-webkit-scrollbar {
-  width: 4px;
-}
-
-.boot-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.boot-scrollbar::-webkit-scrollbar-thumb {
-  background: #16a34a;
-  border-radius: 2px;
-  opacity: 0.7;
-}
-
-.boot-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #22c55e;
-  opacity: 1;
 }
