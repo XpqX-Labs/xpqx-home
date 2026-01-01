@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 interface TaskbarProps {
   openWindows: { id: string; title: string; icon: string; isMinimized: boolean }[];
@@ -38,10 +39,13 @@ export default function Taskbar({
         className={`${isStartMenuOpen ? 'win98-inset' : 'win98-outset'} flex items-center gap-1 px-2 md:px-1.5 h-9 md:h-7 font-bold bg-win98-silver text-sm md:text-[13px]`}
         onClick={onStartClick}
       >
-        <img
+        <Image
           src="https://img.icons8.com/color/48/windows-95.png"
           alt="Start"
+          width={20}
+          height={20}
           className="w-5 h-5 md:w-4 md:h-4"
+          unoptimized
         />
         <span>Start</span>
       </button>
@@ -58,7 +62,7 @@ export default function Taskbar({
             onClick={() => onWindowClick(window.id)}
           >
             {window.icon.startsWith('/') ? (
-              <img src={window.icon} alt="" className="w-4 h-4" />
+              <Image src={window.icon} alt="" width={16} height={16} className="w-4 h-4" />
             ) : (
               <span>{window.icon}</span>
             )}
