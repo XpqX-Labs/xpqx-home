@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface StartMenuProps {
   isOpen: boolean;
   onClose: () => void;
@@ -11,6 +13,7 @@ const menuItems: MenuItem[] = [
   { id: 'projects', icon: '/icon/briefcase-0.png', label: 'My Projects' },
   { id: 'skills', icon: '/icon/directory_admin_tools-0.png', label: 'Skills' },
   { id: 'contact', icon: '/icon/mailbox_world-0.png', label: 'Contact' },
+  { id: 'blog', icon: '/icon/web_file_set-2.png', label: 'Blog' },
   { divider: true },
   {
     id: 'github',
@@ -90,7 +93,13 @@ export default function StartMenu({ isOpen, onClose, onItemClick }: StartMenuPro
                 onClick={(e) => handleItemClick(e, item)}
               >
                 {item.icon.startsWith('/') ? (
-                  <img src={item.icon} alt="" className="w-5 h-5 md:w-4 md:h-4" />
+                  <Image
+                    src={item.icon}
+                    alt=""
+                    width={20}
+                    height={20}
+                    className="w-5 h-5 md:w-4 md:h-4"
+                  />
                 ) : (
                   <span className="text-xl md:text-lg">{item.icon}</span>
                 )}
