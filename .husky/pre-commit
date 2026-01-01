@@ -1,7 +1,1 @@
-#!/usr/bin/env sh
-npx --no-install lint-staged
-
-if [ $? -ne 0 ]; then
-  echo "Linting failed. Commit aborted."
-  exit 1
-fi
+npx lint-staged
