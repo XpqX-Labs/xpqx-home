@@ -1,4 +1,4 @@
-import Window from '@/components/win98/Window';
+import Window from '@/components/ui/Window';
 
 interface ProjectsWindowProps {
   isOpen: boolean;
@@ -9,6 +9,14 @@ interface ProjectsWindowProps {
 }
 
 const projects = [
+  {
+    icon: '🤖',
+    name: 'xoegit',
+    type: 'CLI Tool',
+    desc: 'AI-powered CLI for semantic git commit messages and PR descriptions',
+    tech: 'TypeScript, Node.js, Gemini AI',
+    link: 'https://github.com/ujangdoubleday/xoegit',
+  },
   {
     icon: '🎨',
     name: 'NFT Creator Platform',
