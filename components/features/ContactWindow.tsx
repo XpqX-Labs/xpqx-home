@@ -1,5 +1,5 @@
-import Window from '@/components/win98/Window';
-import Button from '@/components/win98/Button';
+import Window from '@/components/ui/Window';
+import Button from '@/components/ui/Button';
 
 interface ContactWindowProps {
   isOpen: boolean;

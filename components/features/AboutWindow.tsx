@@ -1,4 +1,4 @@
-import Window from '@/components/win98/Window';
+import Window from '@/components/ui/Window';
 
 interface AboutWindowProps {
   isOpen: boolean;
