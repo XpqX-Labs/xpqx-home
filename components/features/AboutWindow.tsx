@@ -40,7 +40,7 @@ export default function AboutWindow({
               Full-stack Developer | Web3 & Blockchain
             </p>
             <p className="my-1 text-sm md:text-xs text-gray-500">
-              📍 Sumedang, West Java, Indonesia
+              📍 South Jakarta, DKI Jakarta, Indonesia
             </p>
           </div>
         </div>
@@ -67,17 +67,40 @@ export default function AboutWindow({
 
         <div className="win98-inset bg-white p-3 text-sm md:text-xs">
           <p className="m-0 text-gray-600 leading-relaxed">
-            Result-oriented Full-stack Developer specializing in Web3 and Blockchain ecosystems.
-            Proficient in architecting scalable decentralized applications using Next.js,
-            TypeScript, and Solidity. Experienced in building enterprise-grade internal systems and
-            end-to-end web solutions.
+            Full-stack Developer with a strong focus on Next.js and TypeScript to deliver
+            high-performance web solutions. Proven ability to build robust architectures for
+            internal systems and Decentralized Applications (DApps). Experienced in integrating Web3
+            ecosystems and optimizing code integrity for both traditional and blockchain-based
+            environments.
           </p>
         </div>
 
         {/* certifications */}
         <div className="win98-inset bg-white p-3 mt-3 text-sm md:text-xs">
           <p className="mb-2 font-bold">📜 Certifications:</p>
-          <ul className="m-0 pl-4 text-gray-600">
+          <ul className="m-0 pl-4 text-gray-600 space-y-1">
+            <li>
+              <a
+                href="https://verify.certiport.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-700 underline"
+              >
+                Microsoft Office Specialist (MOS)
+              </a>{' '}
+              - Certiport (ID: 7yPJ-uSTV)
+            </li>
+            <li>
+              <a
+                href="https://verify.certiport.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-700 underline"
+              >
+                Information Technology Specialist (ITS)
+              </a>{' '}
+              - Certiport (ID: 9a8B-s4qa)
+            </li>
             <li>
               <a
                 href="https://e-hakcipta.dgip.go.id/legal/c/MTE4MzQ0YWE1N2QxMjQ3ZjA1ZTU5ZmY1ZWY0MWVjMjQ="
@@ -85,10 +108,11 @@ export default function AboutWindow({
                 rel="noopener noreferrer"
                 className="text-blue-700 underline"
               >
-                HAKI Software Copyright - NFT Web App
-              </a>
+                Registered Software Copyright (HKI)
+              </a>{' '}
+              - Kemenkumham RI (Reg: 000986083)
             </li>
-            <li>TOEFL Prediction Score: 473</li>
+            <li>TOEFL Prediction Score: 473 - Politeknik TEDC Bandung</li>
           </ul>
         </div>
       </div>

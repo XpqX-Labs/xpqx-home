@@ -12,7 +12,7 @@ const skillCategories = [
   {
     name: 'Languages',
     icon: '📝',
-    skills: ['JavaScript (ES6+)', 'TypeScript', 'Solidity', 'PHP', 'Python'],
+    skills: ['JavaScript (ES6+)', 'TypeScript', 'Solidity', 'PHP', 'Python', 'Java'],
   },
   {
     name: 'Frontend',
@@ -32,7 +32,7 @@ const skillCategories = [
   {
     name: 'DevOps & Cloud',
     icon: '☁️',
-    skills: ['Docker', 'Vercel', 'Cloudflare DNS', 'Git', 'CI/CD'],
+    skills: ['Docker', 'Vercel', 'Cloudflare DNS', 'Git', 'CI/CD', 'Linux Ubuntu'],
   },
 ];
 

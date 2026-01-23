@@ -31,7 +31,6 @@ body {
   font-size: 14px;
   background-color: var(--color-win98-desktop);
   cursor: default;
-  user-select: none;
 }
 
 @media (min-width: 768px) {
