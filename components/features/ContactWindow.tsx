@@ -57,9 +57,6 @@ export default function ContactWindow({
             >
               📧 ilham28alfath@gmail.com
             </a>
-            <a href="tel:+6281222698358" className="text-blue-700 underline cursor-pointer">
-              📱 +62 812-2269-8358
-            </a>
             <a
               href="https://github.com/ujangdoubleday"
               target="_blank"
@@ -76,7 +73,6 @@ export default function ContactWindow({
             >
               💼 linkedin.com/in/ilhamalfath
             </a>
-            <span>📍 Sumedang Regency, West Java, Indonesia</span>
           </div>
         </div>
 
